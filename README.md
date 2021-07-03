@@ -1,4 +1,5 @@
-# react-native-redux-starter
+# react-native-food-app
+# UI : https://dribbble.com/shots/14173151-Delivery-app
 A starter boilerplate for a mobile app using React Native and Redux.
 ## Requirements
 - [Node](https://nodejs.org) `6.x` or newer
