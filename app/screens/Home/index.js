@@ -16,6 +16,7 @@ import {
   appColors,
   explorerCategories,
   popularProducts,
+  recommeandedProducts
 } from '../../utils/appColors';
 import CustomInput from '../../components/CustomInput';
 import Label from '../../components/Label';
@@ -25,6 +26,7 @@ import Divider from '../../components/Divider';
 import Header from '../../components/Header';
 import CatCard from '../../components/category-cards';
 import Popular from '../../components/popular';
+import Recomanded from '../../components/recomanded';
 import {scale} from 'react-native-size-matters';
 
 export default function Home() {
@@ -80,6 +82,28 @@ export default function Home() {
             showsHorizontalScrollIndicator={false}
           />
         </View>
+
+        <View style={{marginTop: scale(50)}}>
+          <Label
+            text={'Recomandados'}
+            style={{
+              fontWeight: '700',
+              fontSize: scale(23),
+              marginBottom: scale(20),
+            }}
+          />
+
+            <FlatList
+            style={{paddingTop: scale(10), paddingBottom: scale(30)}}
+            horizontal
+            data={recommeandedProducts}
+            renderItem={({item, index}) => <Recomanded key={index} item={item} />}
+            showsHorizontalScrollIndicator={false}
+          /> 
+        </View>
+
+
+        
       </ScrollView>
     </View>
   );
@@ -89,6 +113,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: appColors.bgLight,
+    marginBottom: scale(100)
   },
   header: {
     backgroundColor: appColors.primary,

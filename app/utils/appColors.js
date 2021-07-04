@@ -60,6 +60,32 @@ export const popularProducts = [
     price: '$12.58',
   },
 ];
+
+
+
+
+
+export const recommeandedProducts = [
+  {
+    type: "Naturales",
+    label: 'Malteadas tropicales',
+    image: require('../statics/recomanded/img1.png'),
+    isFav: true,
+    description: 'Elaborado con jugos naturales',
+    price: '$12.58',
+  }, 
+  {
+    type: "Naturales",
+    label: 'Malteadas tropicales',
+    image: require('../statics/recomanded/img1.png'),
+    isFav: false,
+    description: 'Elaborado con jugos naturales',
+    price: '$12.58',
+  } 
+];
+
+
+
 export const shadow = {
   shadowColor: '#808080',
   shadowOffset: {

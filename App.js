@@ -18,9 +18,10 @@ import TabNavigationStack from './app/routing/TabNavigationStack';
 import {navigationTypeTabs} from './app.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import Feather from 'react-native-vector-icons/dist/Feather';
 Icon.loadFont();
 Ionicons.loadFont();
-
+Feather.loadFont();
 const App: () => React$Node = () => {
   const {persistor, store} = storePre;
 
