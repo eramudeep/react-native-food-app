@@ -12,9 +12,10 @@ export default function CustomInput({
     InputStyle,
     IconRight,
     IconLeft,
+    containerStyle
 }) {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container,containerStyle]}>
             {IconLeft && <IconLeft/>}
             <TextInput
                 placeholder={placeholder}

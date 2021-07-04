@@ -16,13 +16,16 @@ import {AlertHelper} from './app/utils/AlertHelper';
 import {PersistGate} from 'redux-persist/integration/react';
 import TabNavigationStack from './app/routing/TabNavigationStack';
 import {navigationTypeTabs} from './app.json';
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
+
 const App: () => React$Node = () => {
   const {persistor, store} = storePre;
 
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        {navigationTypeTabs ? <TabNavigationStack /> : <MainStack />} 
+        {navigationTypeTabs ? <TabNavigationStack /> : <MainStack />}
         <DropdownAlert
           defaultContainer={{
             padding: 8,
