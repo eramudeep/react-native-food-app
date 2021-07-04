@@ -17,7 +17,9 @@ import {PersistGate} from 'redux-persist/integration/react';
 import TabNavigationStack from './app/routing/TabNavigationStack';
 import {navigationTypeTabs} from './app.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 Icon.loadFont();
+Ionicons.loadFont();
 
 const App: () => React$Node = () => {
   const {persistor, store} = storePre;

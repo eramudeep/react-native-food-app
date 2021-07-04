@@ -1,3 +1,6 @@
+/**
+ * @author Amusoftech <er.amudeep@gmail.com> 
+ */
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {appColors, shadow} from '../../utils/appColors';
@@ -5,7 +8,7 @@ import Label from '../Label';
 import {displayName as AppName} from '../../../app.json';
 import CustomInput from '../CustomInput';
 import {scale} from 'react-native-size-matters';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/dist/Ionicons';
 
 export default function index() {
   return (
@@ -20,15 +23,10 @@ export default function index() {
       </View>
       <Label style={styles.logo} text={AppName} />
       <View
-        style={{
-          flex: 0.5,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          paddingHorizontal: scale(20),
-        }}>
+        style={styles.icC}>
          
-         <Icon    name="bell" size={scale(20)} color={appColors.bellIcon} />  
-         <Icon   name="bell" size={scale(20)} color={appColors.red} />  
+         <Icon    name="notifications" size={scale(20)} color={appColors.bellIcon} />  
+         <Icon   name="snow" size={scale(20)} color={appColors.red} />  
       </View>
     </View>
   );
@@ -57,4 +55,10 @@ const styles = StyleSheet.create({
     //marginTop: 50,
     //textAlign: 'center',
   },
+  icC:{
+    flex: 0.5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: scale(20),
+  }
 });
