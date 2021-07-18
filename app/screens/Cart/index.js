@@ -11,8 +11,13 @@ import {scale} from 'react-native-size-matters';
 import Header from '../../components/Header';
 import TopCard from '../../components/CartCards/TopCard';
 import CartItemCard from '../../components/CartCards/CartItemCard';
-import {appColors, cartCardTop,popularProducts} from '../../utils/appColors';
- 
+import {
+  appColors,
+  cartCardTop,
+  popularProducts,
+  shadow,
+} from '../../utils/appColors';
+import Label from '../../components/Label';
 
 export default function index() {
   return (
@@ -37,17 +42,63 @@ export default function index() {
             renderItem={({item, index}) => <TopCard key={index} item={item} />}
           />
         </View>
-        <View style={{  marginTop: scale(40), marginBottom: scale(20)}}>
+        <View style={{marginTop: scale(40), marginBottom: scale(20)}}>
           <FlatList
             data={popularProducts}
             horizontal
             showsHorizontalScrollIndicator={false}
-            renderItem={({item, index}) => <CartItemCard key={index} item={item} />}
+            renderItem={({item, index}) => (
+              <CartItemCard key={index} item={item} />
+            )}
           />
         </View>
 
+        <View style={styles.cartTotal}>
+          <View style={styles.totalItemCon}>
+            <Label
+              text="SubTotal"
+              style={{fontWeight: '300', color: appColors.primary}}
+            />
+            <Label
+              text="$85.00 usd"
+              style={{fontWeight: '300', color: appColors.primary}}
+            />
+          </View>
+          {popularProducts?.map((item, key) => {
+            const {price,label}=item
+            return (
+              <View style={styles.totalItemCon}>
+                <Label
+                  text={label}
+                  style={{fontWeight: '300', color: appColors.primary}}
+                />
+                <Label
+                  text={price}
+                  style={{fontWeight: '300', color: appColors.primary}}
+                />
+              </View>
+            );
+          })}
 
-        
+          <View style={styles.totalItemCon}>
+            <Label
+              text="Total"
+              style={{
+                fontWeight: '800',
+                color: appColors.primary,
+                fontSize: scale(17),
+              }}
+            />
+            <Label
+              text="$85.00 usd"
+              style={{
+                fontWeight: '800',
+                color: appColors.primary,
+                fontSize: scale(17),
+              }}
+            />
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -80,5 +131,19 @@ const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
     paddingHorizontal: 20,
+  },
+  cartTotal: {
+    marginTop: scale(40),
+    marginBottom: scale(20),
+    backgroundColor: appColors.bgLight,
+
+    padding: scale(20),
+    borderRadius: scale(15),
+    ...shadow,
+  },
+  totalItemCon: {
+    paddingBottom: scale(15),
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
 });
