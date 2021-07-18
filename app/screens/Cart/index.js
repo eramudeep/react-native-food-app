@@ -18,7 +18,7 @@ import {
   shadow,
 } from '../../utils/appColors';
 import Label from '../../components/Label';
-
+import CustomButton from '../../components/CustomButton';
 export default function index() {
   return (
     <View style={styles.container}>
@@ -99,6 +99,7 @@ export default function index() {
             />
           </View>
         </View>
+        <CustomButton  style={{borderRadius:scale(15), height:scale(70)}} labelStyle={{fontWeight:'800', fontSize:scale(18) }} label={"Realizer Compra"} withGradiant/>
       </ScrollView>
     </View>
   );
