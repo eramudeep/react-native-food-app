@@ -65,6 +65,22 @@ export const popularProducts = [
 
 
 
+export const cartCardTop = [
+  {
+    icon: "home-outline",
+    label: 'Malt picales', 
+    description: 'Elaborado con jugos' 
+  },
+  {
+    icon: "home-outline",
+    label: 'Malt picales', 
+    description: 'Elaborado con jugos' 
+  }  
+];
+
+
+
+
 export const recommeandedProducts = [
   {
     type: "Naturales",

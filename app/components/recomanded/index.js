@@ -1,3 +1,6 @@
+/**
+ * @author Amusoftech <er.amudeep@gmail.com>
+ */
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import {scale} from 'react-native-size-matters';
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: appColors.white,
     height: scale(120),
     width: scale(280),
-    marginLeft: scale(15),
+    marginRight: scale(15),
     borderRadius: scale(15),
   },
   imgc: {flex: 1, position: 'absolute', bottom: scale(-35), left: scale(10)},

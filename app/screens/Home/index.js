@@ -1,3 +1,6 @@
+/**
+ * @author Amusoftech <er.amudeep@gmail.com>
+ */
 import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
@@ -16,7 +19,7 @@ import {
   appColors,
   explorerCategories,
   popularProducts,
-  recommeandedProducts
+  recommeandedProducts,
 } from '../../utils/appColors';
 import CustomInput from '../../components/CustomInput';
 import Label from '../../components/Label';
@@ -93,17 +96,16 @@ export default function Home() {
             }}
           />
 
-            <FlatList
+          <FlatList
             style={{paddingTop: scale(10), paddingBottom: scale(30)}}
             horizontal
             data={recommeandedProducts}
-            renderItem={({item, index}) => <Recomanded key={index} item={item} />}
+            renderItem={({item, index}) => (
+              <Recomanded key={index} item={item} />
+            )}
             showsHorizontalScrollIndicator={false}
-          /> 
+          />
         </View>
-
-
-        
       </ScrollView>
     </View>
   );
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: appColors.bgLight,
-    marginBottom: scale(100)
+    marginBottom: scale(100),
   },
   header: {
     backgroundColor: appColors.primary,

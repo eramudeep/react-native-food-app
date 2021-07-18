@@ -18,7 +18,7 @@ export default function TabNavigationStack() {
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: appColors.primary,
-          inactiveTintColor: appColors.secondary,
+          inactiveTintColor: appColors.gray,
           showLabel:false,
           style:{
             ...shadow,

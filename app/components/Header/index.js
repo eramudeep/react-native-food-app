@@ -10,24 +10,25 @@ import CustomInput from '../CustomInput';
 import {scale} from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
 
-export default function index() {
+export default function index(props) {
+  const { hideSearch, hideIcons, containerStyle,label}=props
   return (
-    <View style={styles.header}>
-      <View style={{width: scale(130)}}>
+    <View style={[styles.header, containerStyle]}>
+      {!hideSearch && <View style={{width: scale(130)}}>
         <CustomInput
           placeholder="Search"
           containerStyle={{borderRadius: scale(6), height: scale(35)}}
           InputStyle={{}}
           IconLeft={()=> <Icon    name="search" size={scale(17)} color={appColors.primary} /> }
         />
-      </View>
-      <Label style={styles.logo} text={AppName} />
-      <View
+      </View>}
+      <Label style={styles.logo} text={ label ? label: AppName} />
+      {!hideIcons && <View
         style={styles.icC}>
          
          <Icon    name="notifications" size={scale(20)} color={appColors.bellIcon} />  
          <Icon   name="snow" size={scale(20)} color={appColors.red} />  
-      </View>
+      </View>}
     </View>
   );
 }
