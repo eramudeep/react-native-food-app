@@ -19,7 +19,11 @@ import {
 } from '../../utils/appColors';
 import Label from '../../components/Label';
 import CustomButton from '../../components/CustomButton';
-export default function index() {
+export default function index({navigation}) {
+   
+ const onPressItem = ()=>{
+    navigation.navigate("Details")
+ } 
   return (
     <View style={styles.container}>
       <SafeAreaView>
@@ -48,7 +52,7 @@ export default function index() {
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item, index}) => (
-              <CartItemCard key={index} item={item} />
+              <CartItemCard onPress={onPressItem} key={index} item={item} />
             )}
           />
         </View>

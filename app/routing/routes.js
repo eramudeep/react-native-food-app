@@ -9,6 +9,7 @@ import {
 import Home from '../screens/Home';
 import Cart from '../screens/Cart';
 import ECart from '../screens/Cart';
+import Details from '../screens/Details';
 import {appColors} from '../utils/appColors';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
 import Feather from 'react-native-vector-icons/dist/Feather';
@@ -42,11 +43,26 @@ export const RoutesList = [
   {
     name: 'Cart',
     component: Cart,
-    options: { 
+    
+    options: {  
       tabBarIcon: (props) => (
         <Feather style={commonStyle} name={'shopping-bag'} size={scale(20)} color={appColors.primary} {...props} />
       ), 
     },
   },
+  {
+    name: 'Details',
+    component: Details,
+    
+    options: { 
+        tabBarButton:(props)=> null ,
+      tabBarVisible:false,  
+      tabBarIcon: (props) => (
+        <Feather style={commonStyle} name={'shopping-bag'} size={scale(20)} color={appColors.primary} {...props} />
+      ), 
+    },
+  },
+
+  
 
 ];

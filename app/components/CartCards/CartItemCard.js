@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/dist/Ionicons';
 import Label from '../../components/Label';
 import {SimpleStepper} from 'react-native-simple-stepper';
 
-export default function CartItemCard({item}) {
+export default function CartItemCard({onPress,item}) {
   const {image, price,description, label} = item;
   const [steperCount, setSteperCount] = useState(1);
   const _renderDeleteButton = () => {
@@ -23,7 +23,7 @@ export default function CartItemCard({item}) {
   return (
     <>
       {_renderDeleteButton()}
-      <View style={styles.contaner}>
+      <Pressable onPress={onPress} style={styles.contaner}>
         <View>
           <Image source={image} />
         </View>
@@ -77,7 +77,7 @@ export default function CartItemCard({item}) {
            <Label text={price} style={{  color: appColors.bellIcon,padding: scale(10), fontSize: scale(20), fontWeight:"800" }} />
           </View>
         </View>
-      </View>
+      </Pressable>
     </>
   );
 }
